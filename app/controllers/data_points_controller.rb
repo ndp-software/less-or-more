@@ -1,4 +1,4 @@
-class DataPointsController < ApplicationController
+class DataPointsController < ApiController
   before_action :set_data_point, only: [:show, :update, :destroy]
 
   # GET /data_points

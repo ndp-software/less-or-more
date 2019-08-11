@@ -1,4 +1,4 @@
-class DataSetsController < ApplicationController
+class DataSetsController < ApiController
   before_action :set_data_set, only: [:show, :update, :destroy]
 
   # GET /data_sets

@@ -1,4 +1,4 @@
-class ReferencesController < ApplicationController
+class ReferencesController < ApiController
   before_action :set_reference, only: [:show, :update, :destroy]
 
   # GET /references

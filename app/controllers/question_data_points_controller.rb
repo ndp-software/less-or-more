@@ -1,4 +1,4 @@
-class QuestionDataPointsController < ApplicationController
+class QuestionDataPointsController < ApiController
   before_action :set_question_data_point, only: [:show, :update, :destroy]
 
   # GET /question_data_points

@@ -1,4 +1,4 @@
-class QuizzesController < ApplicationController
+class QuizzesController < ApiController
   before_action :set_quiz, only: [:show, :update, :destroy]
 
   # GET /quizzes

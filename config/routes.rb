@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
   resources :quiz_questions
   resources :question_data_points
   resources :questions

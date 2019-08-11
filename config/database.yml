@@ -10,13 +10,13 @@ default: &default
 
 development:
   <<: *default
-  database: guestimate_development
+  database: moar_dev
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: guestimate
+  #username: moar
 
   # The password associated with the postgres role (username).
   #password:
@@ -41,7 +41,7 @@ development:
 
 test:
   <<: *default
-  database: guestimate_test
+  database: moar_test
 
 production:
   url: <%= ENV['DATABASE_URL'] %>
