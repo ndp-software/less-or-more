@@ -14,15 +14,15 @@ reference = Reference.create!(headline: 'CivilServiceUSA', body_md: '[Web site](
 
 data_set = DataSet.create!(name: 'U.S. State Admission Date', reference: reference)
 
-csv = CSV.read("db/fixtures/states.csv", headers:true)
+csv = CSV.read("db/fixtures/states.csv", headers: true)
 
 csv.each do |line|
   DataPoint.create!(
       data_set: data_set,
       headline: "Year of #{line['state']}",
       description: "Date #{line['state']} was admitted to the United States of America",
-      value: line['admission_date'],
-      unit_code: 'date',
+      value: Time.new(line['admission_date']).year,
+      unit_code: 'time.date.year',
   )
   DataPoint.create!(
       data_set: data_set,
@@ -32,6 +32,35 @@ csv.each do |line|
       unit_code: 'population',
   )
 end
+
+
+reference = Reference.create!(headline: 'University of Pennsylvania Economics - Global Economics', body_md: '[University of Pennsylvania Economics - Global Economics](https://public.enigma.com/datasets/university-of-pennsylvania-economics-global-economics/11550ebf-e6ba-4bc7-ad84-5d43c18ee291)')
+
+data_set = DataSet.create!(name: 'Country Population 1951-2000', reference: reference)
+
+csv = CSV.read("db/fixtures/54966a73-5283-4898-b9a4-4e0500e75341_UniversityofPennsylvaniaEconomics-GlobalEconomics.csv", headers: true)
+
+csv.each do |line|
+  next if line['pop'].blank?
+  DataPoint.create!(
+      data_set: data_set,
+      headline: "#{line['country']} population (#{line['year']})",
+      description: "Population of #{line['country']} in #{line['year']}",
+      value: (1000.0 * Float(line['pop'])).round,
+      at: Time.new(line['year']),
+      unit_code: 'population',
+      )
+end
+
+
+exit
+
+require 'net/http'
+uri = URI('https://www.thefamouspeople.com/died-at-51.php')
+source = Net::HTTP.get(uri)
+document = Nokogiri::HTML.parse(source)
+
+
 
 
 
