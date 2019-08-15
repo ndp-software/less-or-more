@@ -6,6 +6,7 @@ class CreateDataPoints < ActiveRecord::Migration[6.0]
       t.string :description
       t.float :value
       t.string :unit_code
+      t.date :at
       t.references :reference
 
       t.timestamps

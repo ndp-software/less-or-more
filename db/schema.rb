@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2019_08_11_061951) do
     t.string "description"
     t.float "value"
     t.string "unit_code"
+    t.date "at"
     t.bigint "reference_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
