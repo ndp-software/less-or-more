@@ -1,3 +1,17 @@
+GIT
+  remote: https://github.com/activerecord-hackery/ransack.git
+  revision: aada89548490f98dd3f1a65574ce20551c72d73c
+  ref: aada8
+  specs:
+    polyamorous (2.1.1)
+      activerecord (>= 5.0)
+    ransack (2.1.1)
+      actionpack (>= 5.0)
+      activerecord (>= 5.0)
+      activesupport (>= 5.0)
+      i18n
+      polyamorous (= 2.1.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -166,11 +180,6 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.20.3, < 2.0)
     rake (12.3.3)
-    ransack (2.1.1)
-      actionpack (>= 5.0)
-      activerecord (>= 5.0)
-      activesupport (>= 5.0)
-      i18n
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
@@ -220,9 +229,11 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   listen (>= 3.0.5, < 3.2)
+  nokogiri
   pg (>= 0.18, < 2.0)
   puma (~> 3.11)
   rails (~> 6.0.0.rc2)
+  ransack!
   spring
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
